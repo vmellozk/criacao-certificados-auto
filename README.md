@@ -1,0 +1,2 @@
+# Certificados_Auto
+ Este projeto consiste em um script em Python que automatiza a geração de certificados a partir de dados contidos em uma planilha Excel. O script lê as informações da planilha, como curso, nome do participante, tipo de participação, datas de início e término, carga horária e data de emissão, e as insere em um modelo de certificado pré-definido, gerando assim um certificado personalizado para cada participante do curso.
