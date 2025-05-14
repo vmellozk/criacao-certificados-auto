@@ -1,34 +1,61 @@
-# Certificados_Auto
- Este projeto consiste em um script em Python que automatiza a geração de certificados a partir de dados contidos em uma planilha Excel. O script lê as informações da planilha, como curso, nome do participante, tipo de participação, datas de início e término, carga horária e data de emissão, e as insere em um modelo de certificado pré-definido, gerando assim um certificado personalizado para cada participante do curso.
+# 🏅 Certificados_Auto
 
-Funcionamento do Código:
+## 📋 Descrição
 
+Este projeto em Python automatiza a geração de certificados personalizados a partir de dados contidos em uma planilha Excel. O script insere as informações de cada participante (nome, curso, tipo de participação, datas, carga horária etc.) em um modelo de certificado pré-definido e salva o resultado como uma imagem.
 
+## ⚙️ Tecnologias Utilizadas
 
-Leitura de Dados da Planilha Excel:
-O script utiliza a biblioteca openpyxl para ler os dados contidos na planilha Excel.
-Itera sobre as linhas da planilha, coletando as informações relevantes de cada participante do curso.
+- 📊 `openpyxl`: Leitura da planilha Excel com os dados dos participantes.
+- 🖼️ `PIL (Pillow)`: Manipulação do modelo de certificado e inserção de texto.
+- 💾 `os`: Acesso e manipulação de arquivos do sistema.
+- 🛠️ Tratamento de exceções: Para garantir robustez ao processo.
 
-Processamento e Validação de Dados:
-Os dados são processados e validados para garantir que estejam completos e consistentes.
-São verificados se há valores em branco e se o nome do participante já foi processado anteriormente.
+## 🚀 Como Usar
 
-Geração de Certificados Personalizados:
-Utiliza a biblioteca PIL (Python Imaging Library) para abrir o modelo de certificado pré-definido em formato de imagem.
-As informações coletadas da planilha são então inseridas no certificado, utilizando diferentes fontes e coordenadas para cada tipo de informação.
+### 1. Instalação das Dependências
 
-Salvamento dos Certificados Gerados:
-Após a inserção das informações, o certificado personalizado é salvo como uma nova imagem JPG, com o nome do participante e um identificador numérico para diferenciar cada certificado.
+Instale as bibliotecas necessárias com:
 
-Tratamento de Exceções:
-O script trata exceções como arquivos não encontrados e erros inesperados, garantindo que o processo de geração de certificados seja robusto e confiável.
+```bash
+pip install openpyxl pillow
+```
 
+### 2. Preparação dos Arquivos
 
+- Planilha Excel com os dados dos participantes.
+- Modelo de certificado em formato .jpg.
+- Fontes TrueType (.ttf) para estilização dos textos no certificado.
 
-Explicação dos Métodos Utilizados:
+Certifique-se de que todos esses arquivos estejam no mesmo diretório do script.
 
-openpyxl.load_workbook(): Utilizado para carregar a planilha Excel e acessar suas células.
-Image.open(): Utilizado para abrir o modelo de certificado em formato de imagem.
-ImageDraw.Draw(): Utilizado para desenhar texto sobre a imagem do certificado.
-ImageFont.truetype(): Utilizado para carregar fontes TrueType para inserir texto no certificado.
-imagem.save(): Utilizado para salvar os certificados gerados como novas imagens JPG.
+### 3. Executando o Script
+
+Rode o script com o seguinte comando:
+
+```bash
+python certificados_auto.py
+```
+
+Os certificados gerados serão salvos como imagens .jpg, com nomes personalizados baseados no nome do participante e um identificador numérico.
+
+## 🧠 Funcionamento
+
+### 1. Leitura da Planilha: O script lê os dados da planilha usando openpyxl.
+### 2. Validação dos Dados: Verifica se há campos vazios ou duplicados.
+### 3. Geração dos Certificados:
+### 4. Abre o modelo de certificado com PIL.
+### 5. Insere os dados nos locais corretos usando fontes específicas.
+### 6. Salvamento das Imagens: Cada certificado é salvo como uma nova imagem .jpg.
+### 7. Tratamento de Erros: Exceções como arquivos ausentes ou erros inesperados são tratados para evitar falhas na execução.
+
+## 🔧 Principais Métodos Utilizados
+
+- openpyxl.load_workbook() → Carrega a planilha Excel.
+- Image.open() → Abre o modelo de certificado.
+- ImageDraw.Draw() → Permite desenhar (escrever) sobre a imagem.
+- ImageFont.truetype() → Carrega uma fonte personalizada.
+- imagem.save() → Salva o certificado final como imagem.
+
+## 📄 Licença
+Este projeto está licenciado sob a MIT License. O arquivo 'LICENSE' ainda será disponibilizado para mais informações.
